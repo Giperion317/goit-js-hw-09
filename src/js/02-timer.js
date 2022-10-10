@@ -37,9 +37,7 @@ const options = {
 
 flatpickr('input#datetime-picker', options);
 
-startTimerBtn.addEventListener('click', onStartTimerBtnClick);
-
-function onStartTimerBtnClick() {
+startTimerBtn.addEventListener('click', () => {
   const timerId = setInterval(() => {
     const currentTime = Date.now();
     const delta = timerDate - currentTime;
@@ -52,7 +50,7 @@ function onStartTimerBtnClick() {
       clearInterval(timerId);
     }
   }, 1000);
-}
+});
 
 function addLeadingZero(value) {
   return String(value).padStart(2, '0');

@@ -14,18 +14,15 @@ const switchBtn = (disableBtn, activBtn) => {
 
 switchBtn(stopBtn, startBtn);
 
-startBtn.addEventListener('click', onStartBtnClick);
-stopBtn.addEventListener('click', onStopBtnClick);
-
-function onStartBtnClick() {
+startBtn.addEventListener('click', () => {
   switchBtn(startBtn, stopBtn);
   timerId = setInterval(() => {
     let getRandomColor = getRandomHexColor();
     body.style.backgroundColor = getRandomColor;
   }, 1000);
-}
+});
 
-function onStopBtnClick() {
+stopBtn.addEventListener('click', () => {
   switchBtn(stopBtn, startBtn);
   clearInterval(timerId);
-}
+});
